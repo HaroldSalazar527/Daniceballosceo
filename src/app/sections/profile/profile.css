@@ -1,0 +1,444 @@
+.profile {
+  position: relative;
+
+  background: var(--color-background);
+}
+
+.profile-container {
+  position: relative;
+}
+
+/* ======================================================
+   ENCABEZADO
+====================================================== */
+
+.profile-header {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.1fr)
+    minmax(360px, 0.9fr);
+
+  align-items: end;
+  gap: clamp(60px, 9vw, 145px);
+}
+
+.profile-heading {
+  max-width: 720px;
+}
+
+.profile-heading .section-title {
+  margin-top: 28px;
+}
+
+.profile-introduction {
+  padding-bottom: 7px;
+}
+
+.profile-introduction p {
+  color: var(--color-muted);
+
+  font-size: 0.97rem;
+  line-height: 1.9;
+}
+
+.profile-introduction p + p {
+  margin-top: 20px;
+}
+
+/* ======================================================
+   CONTENIDO PRINCIPAL
+====================================================== */
+
+.profile-content {
+  margin-top: 85px;
+
+  display: grid;
+  grid-template-columns:
+    minmax(330px, 0.8fr)
+    minmax(0, 1.2fr);
+
+  align-items: stretch;
+  gap: 34px;
+}
+
+/* ======================================================
+   FRASE DESTACADA
+====================================================== */
+
+.profile-quote {
+  position: relative;
+
+  min-height: 100%;
+  padding: clamp(38px, 5vw, 65px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      #26313c,
+      #516475
+    );
+
+  color: var(--color-white);
+}
+
+.profile-quote::after {
+  content: 'DC';
+
+  position: absolute;
+  right: -22px;
+  bottom: -65px;
+
+  color: rgba(255, 255, 255, 0.045);
+
+  font-family: var(--font-title);
+  font-size: clamp(10rem, 20vw, 18rem);
+  line-height: 1;
+
+  pointer-events: none;
+}
+
+.profile-quote-mark {
+  position: relative;
+  z-index: 2;
+
+  color: rgba(255, 255, 255, 0.58);
+
+  font-family: var(--font-title);
+  font-size: 6.5rem;
+  line-height: 0.65;
+}
+
+.profile-quote blockquote {
+  position: relative;
+  z-index: 2;
+
+  margin-top: 45px;
+
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 3.3vw, 3.25rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -1px;
+}
+
+.profile-signature {
+  position: relative;
+  z-index: 2;
+
+  margin-top: 70px;
+
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.profile-signature-line {
+  width: 43px;
+  height: 1px;
+
+  flex: 0 0 auto;
+
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.profile-signature strong {
+  display: block;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.profile-signature small {
+  margin-top: 5px;
+
+  display: block;
+
+  color: rgba(255, 255, 255, 0.58);
+
+  font-size: 0.53rem;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+/* ======================================================
+   PILARES
+====================================================== */
+
+.profile-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid var(--color-border);
+  border-left: 1px solid var(--color-border);
+}
+
+.profile-pillar {
+  min-width: 0;
+  padding: clamp(30px, 4vw, 46px) clamp(25px, 3vw, 38px);
+
+  display: flex;
+  flex-direction: column;
+
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+
+  background: var(--color-surface);
+
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    box-shadow var(--transition);
+}
+
+.profile-pillar:hover {
+  position: relative;
+  z-index: 2;
+
+  transform: translateY(-6px);
+
+  background: var(--color-background-soft);
+
+  box-shadow: var(--shadow-medium);
+}
+
+.profile-pillar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.profile-pillar-number {
+  color: var(--color-muted-light);
+
+  font-family: var(--font-title);
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+.profile-pillar-arrow {
+  color: #5f748a;
+
+  font-size: 1rem;
+
+  transition: transform var(--transition);
+}
+
+.profile-pillar:hover .profile-pillar-arrow {
+  transform: translate(4px, -4px);
+}
+
+.profile-pillar h3 {
+  margin-top: 65px;
+
+  color: var(--color-dark);
+
+  font-family: var(--font-title);
+  font-size: clamp(1.7rem, 2.4vw, 2.35rem);
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.profile-pillar p {
+  margin-top: 25px;
+
+  color: var(--color-muted);
+
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+/* ======================================================
+   PIE DE SECCIÓN
+====================================================== */
+
+.profile-footer {
+  margin-top: 65px;
+
+  display: flex;
+  align-items: center;
+  gap: 23px;
+
+  color: var(--color-muted);
+
+  font-size: 0.61rem;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.profile-footer-line {
+  flex: 1;
+
+  height: 1px;
+
+  background: var(--color-border);
+}
+
+.profile-footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+
+  color: var(--color-dark);
+
+  transition: color var(--transition);
+}
+
+.profile-footer a span {
+  color: #5f748a;
+}
+
+.profile-footer a:hover {
+  color: #5f748a;
+}
+
+/* ======================================================
+   PORTÁTILES
+====================================================== */
+
+@media (max-width: 1100px) {
+  .profile-header {
+    gap: 65px;
+  }
+
+  .profile-content {
+    grid-template-columns:
+      minmax(300px, 0.72fr)
+      minmax(0, 1.28fr);
+  }
+
+  .profile-pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-pillar h3 {
+    margin-top: 35px;
+  }
+}
+
+/* ======================================================
+   TABLET
+====================================================== */
+
+@media (max-width: 900px) {
+  .profile-header {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .profile-heading {
+    max-width: 760px;
+  }
+
+  .profile-introduction {
+    max-width: 690px;
+  }
+
+  .profile-content {
+    margin-top: 65px;
+
+    grid-template-columns: 1fr;
+  }
+
+  .profile-quote {
+    min-height: 570px;
+  }
+
+  .profile-pillars {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .profile-pillar h3 {
+    margin-top: 45px;
+  }
+}
+
+/* ======================================================
+   TABLET PEQUEÑA
+====================================================== */
+
+@media (max-width: 720px) {
+  .profile-pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-pillar {
+    min-height: 290px;
+  }
+
+  .profile-pillar h3 {
+    margin-top: 45px;
+  }
+}
+
+/* ======================================================
+   CELULAR
+====================================================== */
+
+@media (max-width: 520px) {
+  .profile-heading .section-title {
+    margin-top: 23px;
+  }
+
+  .profile-introduction p {
+    font-size: 0.93rem;
+    line-height: 1.8;
+  }
+
+  .profile-content {
+    margin-top: 52px;
+    gap: 24px;
+  }
+
+  .profile-quote {
+    min-height: 520px;
+    padding: 35px 28px;
+  }
+
+  .profile-quote-mark {
+    font-size: 5rem;
+  }
+
+  .profile-quote blockquote {
+    margin-top: 35px;
+
+    font-size: 2.2rem;
+  }
+
+  .profile-signature {
+    margin-top: 50px;
+  }
+
+  .profile-pillar {
+    min-height: 270px;
+    padding: 30px 26px;
+  }
+
+  .profile-pillar h3 {
+    margin-top: 38px;
+
+    font-size: 2rem;
+  }
+
+  .profile-pillar p {
+    margin-top: 20px;
+  }
+
+  .profile-footer {
+    margin-top: 48px;
+  }
+
+  .profile-footer > span {
+    display: none;
+  }
+}

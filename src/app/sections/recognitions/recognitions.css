@@ -1,0 +1,572 @@
+.recognitions {
+  position: relative;
+  overflow: hidden;
+
+  background: var(--color-background);
+}
+
+.recognitions-container {
+  position: relative;
+}
+
+/* ======================================================
+   ENCABEZADO
+====================================================== */
+
+.recognitions-header {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.1fr)
+    minmax(340px, 0.9fr);
+
+  align-items: end;
+  gap: clamp(60px, 9vw, 140px);
+}
+
+.recognitions-heading {
+  max-width: 780px;
+}
+
+.recognitions-heading .section-title {
+  margin-top: 28px;
+}
+
+.recognitions-introduction {
+  max-width: 540px;
+  padding-bottom: 8px;
+}
+
+.recognitions-introduction p {
+  color: var(--color-muted);
+
+  font-size: 0.96rem;
+  line-height: 1.9;
+}
+
+.recognitions-introduction p + p {
+  margin-top: 18px;
+}
+
+/* ======================================================
+   DISTRIBUCIÓN
+====================================================== */
+
+.recognitions-layout {
+  margin-top: 82px;
+
+  display: grid;
+  grid-template-columns:
+    minmax(330px, 0.78fr)
+    minmax(0, 1.22fr);
+
+  align-items: stretch;
+  gap: 24px;
+}
+
+/* ======================================================
+   RECONOCIMIENTO DESTACADO
+====================================================== */
+
+.recognitions-featured {
+  position: relative;
+
+  min-height: 650px;
+  padding: clamp(34px, 4.5vw, 55px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      #6f8292 0%,
+      #4f6476 52%,
+      #344655 100%
+    );
+
+  color: var(--color-white);
+
+  box-shadow:
+    0 25px 70px rgba(44, 58, 70, 0.16);
+}
+
+.recognitions-featured::before {
+  content: '';
+
+  position: absolute;
+  top: -130px;
+  right: -120px;
+
+  width: 350px;
+  height: 350px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.recognitions-featured::after {
+  content: '';
+
+  position: absolute;
+  right: 55px;
+  bottom: 125px;
+
+  width: 110px;
+  height: 110px;
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.recognitions-featured-top {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.recognitions-featured-index {
+  font-family: var(--font-title);
+  font-size: 1.05rem;
+  letter-spacing: 2px;
+}
+
+.recognitions-featured-type {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.recognitions-featured-content {
+  position: relative;
+  z-index: 2;
+}
+
+.recognitions-featured-mark {
+  position: absolute;
+  right: -35px;
+  bottom: -20px;
+  z-index: -1;
+
+  color: rgba(255, 255, 255, 0.055);
+
+  font-family: var(--font-title);
+  font-size: clamp(11rem, 19vw, 18rem);
+  line-height: 0.75;
+
+  pointer-events: none;
+}
+
+.recognitions-featured-copy {
+  max-width: 520px;
+}
+
+.recognitions-year {
+  display: inline-block;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.recognitions-featured h3 {
+  margin-top: 20px;
+
+  font-family: var(--font-title);
+  font-size: clamp(2.8rem, 4.5vw, 4.6rem);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -1.5px;
+}
+
+.recognitions-featured-copy p {
+  max-width: 470px;
+
+  margin-top: 28px;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.recognitions-featured-footer {
+  position: relative;
+  z-index: 2;
+
+  padding-top: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.recognitions-featured-footer span:last-child {
+  color: var(--color-white);
+  font-size: 1rem;
+}
+
+/* ======================================================
+   CUADRÍCULA
+====================================================== */
+
+.recognitions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  border-top: 1px solid var(--color-border);
+  border-left: 1px solid var(--color-border);
+}
+
+/* ======================================================
+   TARJETAS
+====================================================== */
+
+.recognition-card {
+  min-width: 0;
+  min-height: 313px;
+  padding: clamp(27px, 3vw, 38px);
+
+  display: flex;
+  flex-direction: column;
+
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+
+  background: var(--color-surface);
+
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    box-shadow var(--transition);
+}
+
+.recognition-card:hover {
+  position: relative;
+  z-index: 3;
+
+  transform: translateY(-5px);
+
+  background: var(--color-background-soft);
+
+  box-shadow: var(--shadow-medium);
+}
+
+.recognition-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.recognition-card-index {
+  color: var(--color-muted-light);
+
+  font-family: var(--font-title);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.recognition-card-icon {
+  color: #5f748a;
+
+  font-size: 1rem;
+
+  transition: transform var(--transition);
+}
+
+.recognition-card:hover .recognition-card-icon {
+  transform: translate(4px, -4px);
+}
+
+.recognition-card-content {
+  margin-top: 42px;
+}
+
+.recognition-card-type {
+  color: #5f748a;
+
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.recognition-card h3 {
+  margin-top: 16px;
+
+  color: var(--color-dark);
+
+  font-family: var(--font-title);
+  font-size: clamp(1.7rem, 2.3vw, 2.3rem);
+  font-weight: 600;
+  line-height: 1.08;
+}
+
+.recognition-card-content p {
+  margin-top: 20px;
+
+  color: var(--color-muted);
+
+  font-size: 0.84rem;
+  line-height: 1.75;
+}
+
+.recognition-card-footer {
+  margin-top: auto;
+  padding-top: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  color: var(--color-muted-light);
+
+  font-size: 0.53rem;
+  font-weight: 700;
+  letter-spacing: 1.15px;
+  text-transform: uppercase;
+}
+
+/* ======================================================
+   TARJETA OSCURA
+====================================================== */
+
+.recognition-card-dark {
+  background: #272d32;
+  color: var(--color-white);
+}
+
+.recognition-card-dark:hover {
+  background: #323a41;
+}
+
+.recognition-card-dark .recognition-card-index,
+.recognition-card-dark .recognition-card-footer {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.recognition-card-dark .recognition-card-type,
+.recognition-card-dark .recognition-card-icon {
+  color: #aebdca;
+}
+
+.recognition-card-dark h3 {
+  color: var(--color-white);
+}
+
+.recognition-card-dark .recognition-card-content p {
+  color: rgba(255, 255, 255, 0.66);
+}
+
+/* ======================================================
+   PIE DE SECCIÓN
+====================================================== */
+
+.recognitions-footer {
+  margin-top: 65px;
+  padding-top: 35px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 50px;
+
+  border-top: 1px solid var(--color-border);
+}
+
+.recognitions-footer-copy {
+  max-width: 600px;
+}
+
+.recognitions-footer-copy > span {
+  color: var(--color-muted-light);
+
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.recognitions-footer-copy p {
+  margin-top: 13px;
+
+  color: var(--color-muted);
+
+  font-size: 0.88rem;
+  line-height: 1.75;
+}
+
+.recognitions-main-link {
+  min-width: 210px;
+  padding: 16px 20px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+
+  border: 1px solid #5f748a;
+
+  background: #5f748a;
+  color: var(--color-white);
+
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.recognitions-main-link:hover {
+  transform: translateY(-2px);
+
+  background: #495f75;
+  border-color: #495f75;
+
+  box-shadow:
+    0 16px 38px rgba(73, 95, 117, 0.22);
+}
+
+/* ======================================================
+   PORTÁTILES
+====================================================== */
+
+@media (max-width: 1100px) {
+  .recognitions-layout {
+    grid-template-columns:
+      minmax(300px, 0.7fr)
+      minmax(0, 1.3fr);
+  }
+
+  .recognitions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .recognition-card {
+    min-height: 280px;
+  }
+}
+
+/* ======================================================
+   TABLET
+====================================================== */
+
+@media (max-width: 900px) {
+  .recognitions-header {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .recognitions-introduction {
+    max-width: 680px;
+  }
+
+  .recognitions-layout {
+    margin-top: 65px;
+
+    grid-template-columns: 1fr;
+  }
+
+  .recognitions-featured {
+    min-height: 580px;
+  }
+
+  .recognitions-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ======================================================
+   TABLET PEQUEÑA Y CELULAR
+====================================================== */
+
+@media (max-width: 680px) {
+  .recognitions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .recognition-card {
+    min-height: 270px;
+  }
+}
+
+/* ======================================================
+   CELULAR
+====================================================== */
+
+@media (max-width: 520px) {
+  .recognitions-heading .section-title {
+    margin-top: 23px;
+  }
+
+  .recognitions-layout {
+    margin-top: 52px;
+    gap: 20px;
+  }
+
+  .recognitions-featured {
+    min-height: 520px;
+    padding: 32px 27px;
+  }
+
+  .recognitions-featured h3 {
+    font-size: 3rem;
+  }
+
+  .recognition-card {
+    min-height: 260px;
+    padding: 29px 25px;
+  }
+
+  .recognition-card-content {
+    margin-top: 36px;
+  }
+
+  .recognition-card h3 {
+    font-size: 2rem;
+  }
+
+  .recognitions-footer {
+    margin-top: 48px;
+
+    flex-direction: column;
+    align-items: stretch;
+    gap: 28px;
+  }
+
+  .recognitions-main-link {
+    width: 100%;
+    min-width: 0;
+  }
+}

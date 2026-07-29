@@ -1,0 +1,609 @@
+<section
+  class="contact section"
+  id="contacto"
+  aria-labelledby="contact-title"
+>
+  <div class="container contact-container">
+
+    <header class="contact-header">
+
+      <div class="contact-heading">
+
+        <span class="section-label">
+          {{ 'contact.label' | translate }}
+        </span>
+
+        <h2
+          id="contact-title"
+          class="section-title"
+        >
+          {{ 'contact.titleLine1' | translate }}
+
+          <span>
+            {{ 'contact.titleLine2' | translate }}
+          </span>
+        </h2>
+
+      </div>
+
+      <div class="contact-introduction">
+
+        <p>
+          {{ 'contact.introduction1' | translate }}
+        </p>
+
+        <p>
+          {{ 'contact.introduction2' | translate }}
+        </p>
+
+      </div>
+
+    </header>
+
+    <div class="contact-layout">
+
+      <aside class="contact-information">
+
+        <div class="contact-information-top">
+
+          <span class="contact-information-label">
+            {{ 'contact.informationLabel' | translate }}
+          </span>
+
+          <span
+            class="contact-information-number"
+            aria-hidden="true"
+          >
+            01
+          </span>
+
+        </div>
+
+        <div class="contact-information-main">
+
+          <span
+            class="contact-information-mark"
+            aria-hidden="true"
+          >
+            DC
+          </span>
+
+          <h3>
+            {{ 'contact.informationTitle' | translate }}
+          </h3>
+
+          <p>
+            {{ 'contact.informationDescription' | translate }}
+          </p>
+
+        </div>
+
+        <div class="contact-details">
+
+          <a
+  href="mailto:daniel@daniceballos.ceo"
+  class="contact-detail"
+>
+  <span class="contact-detail-label">
+    {{ 'contact.emailLabel' | translate }}
+  </span>
+
+  <strong>
+    daniel@daniceballos.ceo
+  </strong>
+
+  <span
+    class="contact-detail-arrow"
+    aria-hidden="true"
+  >
+    ↗
+  </span>
+</a>
+
+          <div class="contact-detail">
+
+            <span class="contact-detail-label">
+              {{ 'contact.locationLabel' | translate }}
+            </span>
+
+            <strong>
+              {{ 'contact.locationValue' | translate }}
+            </strong>
+
+          </div>
+
+          <div class="contact-detail">
+
+            <span class="contact-detail-label">
+              {{ 'contact.availabilityLabel' | translate }}
+            </span>
+
+            <strong>
+              {{ 'contact.availabilityValue' | translate }}
+            </strong>
+
+          </div>
+
+        </div>
+
+        <div class="contact-social">
+
+          <span>
+            {{ 'contact.connectLabel' | translate }}
+          </span>
+
+          <div class="contact-social-links">
+
+            <a
+              href="https://www.linkedin.com/in/daniel-ceballos-96280a94/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+              <span aria-hidden="true">↗</span>
+            </a>
+
+            <a
+              href="https://www.instagram.com/daniceballos.ceo?igsh=MWg3b29nM2NkNjl3bw=="
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram
+              <span aria-hidden="true">↗</span>
+            </a>
+
+            <a
+  href="https://www.facebook.com/share/197TeGEmBh/?mibextid=wwXIfr"
+  target="_blank"
+  rel="noopener noreferrer">
+  Facebook
+  <span aria-hidden="true">↗</span>
+</a>
+
+<a
+  href="https://www.tiktok.com/@daniceballos.ceo?_r=1&_t=ZS-98RRA9OeggD"
+  target="_blank"
+  rel="noopener noreferrer">
+  TikTok
+  <span aria-hidden="true">↗</span>
+</a>
+
+          </div>
+
+        </div>
+
+      </aside>
+
+      <div class="contact-form-wrapper">
+
+        <div class="contact-form-heading">
+
+          <span>
+            {{ 'contact.formLabel' | translate }}
+          </span>
+
+          <h3>
+            {{ 'contact.formTitle' | translate }}
+          </h3>
+
+          <p>
+            {{ 'contact.formDescription' | translate }}
+          </p>
+
+        </div>
+
+        @if (!formularioEnviado) {
+
+          <form
+            class="contact-form"
+            (ngSubmit)="enviarFormulario()"
+            #contactForm="ngForm"
+          >
+
+            <div class="contact-form-grid">
+
+              <div class="contact-field">
+
+                <label for="nombre">
+                  {{ 'contact.nameLabel' | translate }}
+                </label>
+
+                <input
+                  id="nombre"
+                  name="nombre"
+                  type="text"
+                  [placeholder]="'contact.namePlaceholder' | translate"
+                  autocomplete="name"
+                  required
+                  [(ngModel)]="nombre"
+                >
+
+              </div>
+
+              <div class="contact-field">
+
+                <label for="correo">
+                  {{ 'contact.emailFieldLabel' | translate }}
+                </label>
+
+                <input
+                  id="correo"
+                  name="correo"
+                  type="email"
+                  [placeholder]="'contact.emailPlaceholder' | translate"
+                  autocomplete="email"
+                  required
+                  email
+                  [(ngModel)]="correo"
+                >
+
+              </div>
+
+              <div class="contact-field">
+
+                <label for="organizacion">
+                  {{ 'contact.organizationLabel' | translate }}
+                </label>
+
+                <input
+                  id="organizacion"
+                  name="organizacion"
+                  type="text"
+                  [placeholder]="'contact.organizationPlaceholder' | translate"
+                  autocomplete="organization"
+                  [(ngModel)]="organizacion"
+                >
+
+              </div>
+
+              <div class="contact-field">
+
+                <label for="motivo">
+                  {{ 'contact.reasonLabel' | translate }}
+                </label>
+
+                <select
+                  id="motivo"
+                  name="motivo"
+                  required
+                  [(ngModel)]="motivo"
+                >
+                  <option
+                    value=""
+                    disabled
+                  >
+                    {{ 'contact.reasonPlaceholder' | translate }}
+                  </option>
+
+                  <option value="conferencia">
+                    {{ 'contact.reasonConference' | translate }}
+                  </option>
+
+                  <option value="consultoria">
+                    {{ 'contact.reasonConsulting' | translate }}
+                  </option>
+
+                  <option value="mentoria">
+                    {{ 'contact.reasonMentoring' | translate }}
+                  </option>
+
+                  <option value="medios">
+                    {{ 'contact.reasonMedia' | translate }}
+                  </option>
+
+                  <option value="alianza">
+                    {{ 'contact.reasonPartnership' | translate }}
+                  </option>
+
+                  <option value="otro">
+                    {{ 'contact.reasonOther' | translate }}
+                  </option>
+                </select>
+
+              </div>
+
+              <div class="contact-field contact-field-full">
+
+                <label for="mensaje">
+                  {{ 'contact.messageLabel' | translate }}
+                </label>
+
+                <textarea
+                  id="mensaje"
+                  name="mensaje"
+                  rows="6"
+                  [placeholder]="'contact.messagePlaceholder' | translate"
+                  required
+                  [(ngModel)]="mensaje"
+                ></textarea>
+
+              </div>
+
+            </div>
+
+            <div class="contact-form-footer">
+
+              <p>
+                {{ 'contact.formNotice' | translate }}
+              </p>
+
+              <button
+                type="submit"
+                class="contact-submit"
+                [disabled]="contactForm.invalid"
+              >
+                <span>
+                  {{ 'contact.submit' | translate }}
+                </span>
+
+                <span aria-hidden="true">
+                  →
+                </span>
+              </button>
+
+            </div>
+
+          </form>
+
+        } @else {
+
+          <div
+            class="contact-success"
+            role="status"
+            aria-live="polite"
+          >
+
+            <span
+              class="contact-success-icon"
+              aria-hidden="true"
+            >
+              ✓
+            </span>
+
+            <span class="contact-success-label">
+              {{ 'contact.successLabel' | translate }}
+            </span>
+
+            <h3>
+              {{ 'contact.successTitle' | translate }}
+            </h3>
+
+            <p>
+              {{ 'contact.successDescription' | translate }}
+            </p>
+
+            <button
+              type="button"
+              class="contact-success-button"
+              (click)="mostrarFormulario()"
+            >
+              {{ 'contact.successButton' | translate }}
+            </button>
+
+          </div>
+
+        }
+
+      </div>
+
+    </div>
+
+    <section
+      class="contact-social-section"
+      aria-labelledby="contact-social-title"
+    >
+
+      <div class="contact-social-header">
+
+        <div class="contact-social-heading">
+
+          <span class="section-label">
+            {{ 'contact.socialLabel' | translate }}
+          </span>
+
+          <h3 id="contact-social-title">
+            {{ 'contact.socialTitleLine1' | translate }}
+
+            <span>
+              {{ 'contact.socialTitleLine2' | translate }}
+            </span>
+          </h3>
+
+        </div>
+
+        <p>
+          {{ 'contact.socialDescription' | translate }}
+        </p>
+
+      </div>
+
+      <div class="contact-social-grid">
+
+        <a
+          href="https://www.linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-network-card social-network-linkedin"
+        >
+          <div
+            class="social-network-icon"
+            aria-hidden="true"
+          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M6.94 8.5H3.56V19h3.38V8.5ZM5.25 3A1.96 1.96 0 1 0 5.25 6.92 1.96 1.96 0 0 0 5.25 3ZM20.44 12.98c0-3.16-1.69-4.63-3.94-4.63-1.82 0-2.63 1-3.08 1.7V8.5h-3.38V19h3.38v-5.2c0-1.37.26-2.7 1.96-2.7 1.67 0 1.69 1.56 1.69 2.79V19h3.37v-6.02Z"
+              />
+            </svg>
+          </div>
+
+          <div class="social-network-content">
+
+            <span class="social-network-label">
+              {{ 'contact.linkedinLabel' | translate }}
+            </span>
+
+            <strong>
+              LinkedIn
+            </strong>
+
+            <p>
+              {{ 'contact.linkedinDescription' | translate }}
+            </p>
+
+          </div>
+
+          <span
+            class="social-network-arrow"
+            aria-hidden="true"
+          >
+            ↗
+          </span>
+        </a>
+
+        <a
+          href="https://www.instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-network-card social-network-instagram"
+        >
+          <div
+            class="social-network-icon"
+            aria-hidden="true"
+          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2Zm0 2A3.75 3.75 0 0 0 4 7.75v8.5A3.75 3.75 0 0 0 7.75 20h8.5A3.75 3.75 0 0 0 20 16.25v-8.5A3.75 3.75 0 0 0 16.25 4h-8.5ZM17.5 5.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"
+              />
+            </svg>
+          </div>
+
+          <div class="social-network-content">
+
+            <span class="social-network-label">
+              {{ 'contact.instagramLabel' | translate }}
+            </span>
+
+            <strong>
+              Instagram
+            </strong>
+
+            <p>
+              {{ 'contact.instagramDescription' | translate }}
+            </p>
+
+          </div>
+
+          <span
+            class="social-network-arrow"
+            aria-hidden="true"
+          >
+            ↗
+          </span>
+        </a>
+
+        <a
+          href="https://www.facebook.com/share/197TeGEmBh/?mibextid=wwXIfr"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-network-card social-network-facebook"
+        >
+          <div
+            class="social-network-icon"
+            aria-hidden="true"
+          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M14.5 8H17V4.4c-.43-.06-1.91-.18-3.67-.18-3.46 0-5.83 2.11-5.83 6v3.35H4V17.6h3.5V24h4.29v-6.4h3.58l.57-4.03h-4.15v-2.95C11.79 9.46 12.1 8 14.5 8Z"
+              />
+            </svg>
+          </div>
+
+          <div class="social-network-content">
+
+            <span class="social-network-label">
+              {{ 'contact.facebookLabel' | translate }}
+            </span>
+
+            <strong>
+              Facebook
+            </strong>
+
+            <p>
+              {{ 'contact.facebookDescription' | translate }}
+            </p>
+
+          </div>
+
+          <span
+            class="social-network-arrow"
+            aria-hidden="true"
+          >
+            ↗
+          </span>
+        </a>
+
+        <a
+          href="https://www.tiktok.com/@daniceballos.ceo?_r=1&_t=ZS-98RRA9OeggD"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-network-card social-network-tiktok"
+        >
+          <div
+            class="social-network-icon"
+            aria-hidden="true"
+          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M15.6 3c.32 1.84 1.36 3.12 3.4 3.25v3.1a8.17 8.17 0 0 1-3.4-.79v6.13a5.69 5.69 0 1 1-4.91-5.64v3.14a2.58 2.58 0 1 0 1.82 2.47V3h3.09Z"
+              />
+            </svg>
+          </div>
+
+          <div class="social-network-content">
+
+            <span class="social-network-label">
+              {{ 'contact.tiktokLabel' | translate }}
+            </span>
+
+            <strong>
+              TikTok
+            </strong>
+
+            <p>
+              {{ 'contact.tiktokDescription' | translate }}
+            </p>
+
+          </div>
+
+          <span
+            class="social-network-arrow"
+            aria-hidden="true"
+          >
+            ↗
+          </span>
+        </a>
+
+      </div>
+
+    </section>
+
+    <footer class="contact-footer">
+
+      <span>
+        Dani Ceballos
+      </span>
+
+      <div class="contact-footer-line"></div>
+
+      <a href="#inicio">
+        {{ 'contact.backTop' | translate }}
+
+        <span aria-hidden="true">
+          ↑
+        </span>
+      </a>
+
+    </footer>
+
+  </div>
+</section>

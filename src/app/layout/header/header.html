@@ -1,0 +1,247 @@
+<header
+  class="header"
+  [class.header-scrolled]="headerReducido"
+>
+  <div class="container header-container">
+
+    <a
+      href="#inicio"
+      class="brand"
+      [attr.aria-label]="'header.homeLabel' | translate"
+      (click)="cerrarMenu()"
+    >
+      <span class="brand-name">
+        DANI CEBALLOS
+      </span>
+
+      <span class="brand-role">
+        {{ 'header.role' | translate }}
+      </span>
+    </a>
+
+
+    <div class="header-actions">
+
+      <nav
+        id="menu-principal"
+        class="nav"
+        [class.nav-open]="menuAbierto"
+        [attr.aria-label]="'header.navigationLabel' | translate"
+      >
+        <a
+          href="#perfil"
+          (click)="cerrarMenu()"
+        >
+          {{ 'header.profile' | translate }}
+        </a>
+
+        <a
+          href="#trayectoria"
+          (click)="cerrarMenu()"
+        >
+          {{ 'header.trajectory' | translate }}
+        </a>
+
+        <a
+          href="#reconocimientos"
+          (click)="cerrarMenu()"
+        >
+          {{ 'header.recognitions' | translate }}
+        </a>
+
+        <a
+          href="#servicios"
+          (click)="cerrarMenu()"
+        >
+          {{ 'header.services' | translate }}
+        </a>
+
+        <a
+          href="#contacto"
+          class="nav-cta"
+          (click)="cerrarMenu()"
+        >
+          <span>
+            {{ 'header.contact' | translate }}
+          </span>
+
+          <span aria-hidden="true">
+            ↗
+          </span>
+        </a>
+
+        <div class="language-mobile">
+
+          <span class="language-mobile-title">
+            {{ 'language.label' | translate }}
+          </span>
+
+          <div class="language-mobile-options">
+
+            <button
+              type="button"
+              [class.language-mobile-active]="idiomaActual() === 'es'"
+              (click)="cambiarIdioma('es')"
+            >
+              ES
+            </button>
+
+            <button
+              type="button"
+              [class.language-mobile-active]="idiomaActual() === 'en'"
+              (click)="cambiarIdioma('en')"
+            >
+              EN
+            </button>
+
+            <button
+              type="button"
+              [class.language-mobile-active]="idiomaActual() === 'fr'"
+              (click)="cambiarIdioma('fr')"
+            >
+              FR
+            </button>
+
+          </div>
+
+        </div>
+
+      </nav>
+
+      <div class="language-selector">
+
+        <button
+          type="button"
+          class="language-trigger"
+          [class.language-trigger-open]="menuIdiomasAbierto"
+          [attr.aria-expanded]="menuIdiomasAbierto"
+          aria-haspopup="menu"
+          [attr.aria-label]="'language.label' | translate"
+          (click)="alternarMenuIdiomas()"
+        >
+          <svg
+            class="language-globe"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M3 12h18"></path>
+            <path d="M12 3c2.3 2.45 3.5 5.45 3.5 9S14.3 18.55 12 21"></path>
+            <path d="M12 3c-2.3 2.45-3.5 5.45-3.5 9S9.7 18.55 12 21"></path>
+          </svg>
+
+          <span class="language-current">
+            {{ nombreIdiomaActual() }}
+          </span>
+
+          <svg
+            class="language-chevron"
+            viewBox="0 0 12 8"
+            aria-hidden="true"
+          >
+            <path d="M1 1.5 6 6.5l5-5"></path>
+          </svg>
+        </button>
+
+        @if (menuIdiomasAbierto) {
+
+          <div
+            class="language-menu"
+            role="menu"
+          >
+            <button
+              type="button"
+              role="menuitem"
+              [class.language-option-active]="idiomaActual() === 'es'"
+              (click)="cambiarIdioma('es')"
+            >
+              <span class="language-option-code">
+                ES
+              </span>
+
+              <span>
+                {{ 'language.spanish' | translate }}
+              </span>
+
+              @if (idiomaActual() === 'es') {
+                <span
+                  class="language-check"
+                  aria-hidden="true"
+                >
+                  ✓
+                </span>
+              }
+            </button>
+
+            <button
+              type="button"
+              role="menuitem"
+              [class.language-option-active]="idiomaActual() === 'en'"
+              (click)="cambiarIdioma('en')"
+            >
+              <span class="language-option-code">
+                EN
+              </span>
+
+              <span>
+                {{ 'language.english' | translate }}
+              </span>
+
+              @if (idiomaActual() === 'en') {
+                <span
+                  class="language-check"
+                  aria-hidden="true"
+                >
+                  ✓
+                </span>
+              }
+            </button>
+
+            <button
+              type="button"
+              role="menuitem"
+              [class.language-option-active]="idiomaActual() === 'fr'"
+              (click)="cambiarIdioma('fr')"
+            >
+              <span class="language-option-code">
+                FR
+              </span>
+
+              <span>
+                {{ 'language.french' | translate }}
+              </span>
+
+              @if (idiomaActual() === 'fr') {
+                <span
+                  class="language-check"
+                  aria-hidden="true"
+                >
+                  ✓
+                </span>
+              }
+            </button>
+
+          </div>
+
+        }
+
+      </div>
+      
+      <button
+      type="button"
+      class="menu-toggle"
+      [class.menu-toggle-active]="menuAbierto"
+      [attr.aria-expanded]="menuAbierto"
+      aria-controls="menu-principal"
+      [attr.aria-label]="'header.menuLabel' | translate"
+      (click)="alternarMenu()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    </div>
+
+  </div>
+</header>

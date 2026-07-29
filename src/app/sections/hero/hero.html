@@ -1,0 +1,115 @@
+<section class="hero" id="inicio">
+
+  <div class="container hero-container">
+
+    <div class="hero-content">
+
+      <span class="hero-eyebrow">
+        {{ 'hero.eyebrow' | translate }}
+      </span>
+
+      <h1>
+        {{ 'hero.name' | translate }}
+
+        <span>
+          {{ 'hero.lastname' | translate }}
+        </span>
+      </h1>
+
+      <div class="hero-statement">
+
+        <p>
+          {{ 'hero.statement' | translate }}
+        </p>
+
+      </div>
+
+      <p class="hero-description">
+        {{ 'hero.description' | translate }}
+      </p>
+
+      <div class="hero-actions">
+
+        <a
+          href="#servicios"
+          class="hero-button hero-button-primary"
+        >
+          <span>
+            {{ 'hero.services' | translate }}
+          </span>
+
+          <span aria-hidden="true">
+            ↗
+          </span>
+        </a>
+
+        <a
+          href="#contacto"
+          class="hero-button hero-button-secondary"
+        >
+          <span>
+            {{ 'hero.contact' | translate }}
+          </span>
+
+          <span aria-hidden="true">
+            →
+          </span>
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="hero-visual">
+
+      <div class="hero-image-frame">
+
+        <img
+  src="/images/daniceo.jpeg"
+  alt="Fotografía de Dani Ceballos"
+  class="hero-image"
+  fetchpriority="high"
+  loading="eager"
+  decoding="async"
+/>
+
+
+        <div class="hero-image-signature">
+
+          <strong>
+            Dani Ceballos
+          </strong>
+
+          <span>
+            {{ 'hero.signatureRole' | translate }}
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="container hero-bottom">
+
+    <span>
+      {{ 'hero.profile' | translate }}
+    </span>
+
+    <div class="hero-bottom-line"></div>
+
+    <a href="#perfil">
+
+      {{ 'hero.trajectory' | translate }}
+
+      <span aria-hidden="true">
+        ↓
+      </span>
+
+    </a>
+
+  </div>
+
+</section>

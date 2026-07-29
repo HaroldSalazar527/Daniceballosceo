@@ -1,0 +1,897 @@
+/* ======================================================
+   HEADER PRINCIPAL
+====================================================== */
+
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 1000;
+
+  height: var(--header-height);
+
+  display: flex;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #eeeeee;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  transition:
+    height 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.header-scrolled {
+  height: 76px;
+
+  background: #ffffff;
+  border-color: #e7e7e7;
+
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.06);
+}
+
+.header-container {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 34px;
+}
+
+/* ======================================================
+   MARCA
+====================================================== */
+
+.brand {
+  position: relative;
+  z-index: 1004;
+
+  flex: 0 0 auto;
+
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  color: inherit;
+  white-space: nowrap;
+}
+
+.brand-name {
+  color: #262626;
+
+  font-family: var(--font-main);
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 3.4px;
+  text-transform: uppercase;
+}
+
+.brand-role {
+  margin-top: 7px;
+
+  color: #7a7a7a;
+
+  font-family: var(--font-main);
+  font-size: 0.52rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.brand::after {
+  content: '';
+
+  width: 38px;
+  height: 1px;
+
+  margin-top: 8px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #5f748a,
+      transparent
+    );
+
+  transition: width var(--transition);
+}
+
+.brand:hover::after {
+  width: 100%;
+}
+
+/* ======================================================
+   ACCIONES DEL HEADER
+====================================================== */
+
+.header-actions {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 13px;
+}
+
+/* ======================================================
+   NAVEGACIÓN
+====================================================== */
+
+.nav {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 27px;
+}
+
+.nav > a:not(.nav-cta) {
+  position: relative;
+
+  color: #5f5f5f;
+
+  font-family: var(--font-main);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  transition: color var(--transition);
+}
+
+.nav > a:not(.nav-cta)::after {
+  content: '';
+
+  position: absolute;
+  left: 0;
+  bottom: -9px;
+
+  width: 0;
+  height: 1px;
+
+  background: #5f748a;
+
+  transition: width var(--transition);
+}
+
+.nav > a:not(.nav-cta):hover {
+  color: #202020;
+}
+
+.nav > a:not(.nav-cta):hover::after {
+  width: 100%;
+}
+
+/* ======================================================
+   BOTÓN CONVERSEMOS
+====================================================== */
+
+.nav-cta {
+  min-width: 158px;
+  padding: 14px 19px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+
+  border: 1px solid #5f748a;
+  border-radius: 2px;
+
+  background: #5f748a;
+  color: #ffffff;
+
+  font-family: var(--font-main);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 1.35px;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  box-shadow:
+    0 10px 28px rgba(95, 116, 138, 0.16);
+
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.nav-cta span:last-child {
+  color: #ffffff;
+
+  font-size: 1rem;
+
+  transition: transform var(--transition);
+}
+
+.nav-cta:hover {
+  transform: translateY(-2px);
+
+  background: #495f75;
+  border-color: #495f75;
+
+  box-shadow:
+    0 16px 38px rgba(73, 95, 117, 0.25);
+}
+
+.nav-cta:hover span:last-child {
+  transform: translate(3px, -3px);
+}
+
+/* ======================================================
+   SELECTOR DE IDIOMAS
+====================================================== */
+
+.language-selector {
+  position: relative;
+  z-index: 1005;
+
+  flex: 0 0 auto;
+}
+
+.language-trigger {
+  min-width: 82px;
+  height: 46px;
+  padding: 0 13px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  border: 1px solid #d9dde1;
+  border-radius: 2px;
+
+  background: #ffffff;
+  color: #4f5f6d;
+
+  cursor: pointer;
+
+  transition:
+    border-color var(--transition),
+    background var(--transition),
+    color var(--transition),
+    box-shadow var(--transition);
+}
+
+.language-trigger:hover,
+.language-trigger-open {
+  border-color: #5f748a;
+
+  background: #f7f8f9;
+  color: #344655;
+
+  box-shadow:
+    0 10px 26px rgba(44, 58, 70, 0.1);
+}
+
+.language-globe {
+  width: 18px;
+  height: 18px;
+
+  flex: 0 0 auto;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.language-current {
+  min-width: 20px;
+
+  color: inherit;
+
+  font-family: var(--font-main);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1;
+  text-align: center;
+}
+
+.language-chevron {
+  width: 9px;
+  height: 6px;
+
+  flex: 0 0 auto;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  transition: transform var(--transition);
+}
+
+.language-trigger-open .language-chevron {
+  transform: rotate(180deg);
+}
+
+/* ======================================================
+   MENÚ DESPLEGABLE DE IDIOMAS
+====================================================== */
+
+.language-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+
+  width: 210px;
+  padding: 8px;
+
+  border: 1px solid #e1e4e7;
+  border-radius: 2px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 22px 55px rgba(27, 35, 42, 0.14);
+}
+
+.language-menu::before {
+  content: '';
+
+  position: absolute;
+  top: -6px;
+  right: 25px;
+
+  width: 10px;
+  height: 10px;
+
+  border-top: 1px solid #e1e4e7;
+  border-left: 1px solid #e1e4e7;
+
+  background: #ffffff;
+
+  transform: rotate(45deg);
+}
+
+.language-menu button {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  min-height: 47px;
+  padding: 0 12px;
+
+  display: grid;
+  grid-template-columns: 31px 1fr 18px;
+  align-items: center;
+  gap: 9px;
+
+  border: 0;
+  border-radius: 2px;
+
+  background: transparent;
+  color: #5e5e5e;
+
+  font-family: var(--font-main);
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+
+.language-menu button:hover {
+  background: #f4f6f7;
+  color: #28343e;
+}
+
+.language-option-active {
+  background: #eef1f3 !important;
+  color: #344655 !important;
+}
+
+.language-option-code {
+  color: #7a8996;
+
+  font-size: 0.57rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.language-check {
+  color: #5f748a;
+
+  font-size: 0.78rem;
+  text-align: right;
+}
+
+/* Ya no usamos el selector dentro del menú móvil */
+
+.language-mobile {
+  display: none;
+}
+
+/* ======================================================
+   BOTÓN HAMBURGUESA
+====================================================== */
+
+.menu-toggle {
+  position: relative;
+  z-index: 1004;
+
+  width: 46px;
+  height: 46px;
+
+  display: none;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  border: 1px solid #dddddd;
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.06);
+
+  cursor: pointer;
+
+  transition:
+    border-color var(--transition),
+    background var(--transition),
+    box-shadow var(--transition);
+}
+
+.menu-toggle:hover {
+  border-color: #aeb9c4;
+
+  background: #f8f8f8;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.09);
+}
+
+.menu-toggle span {
+  width: 20px;
+  height: 1px;
+
+  display: block;
+
+  background: #202020;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.menu-toggle-active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle-active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ======================================================
+   PORTÁTILES GRANDES
+====================================================== */
+
+@media (max-width: 1240px) {
+  .header-container {
+    gap: 23px;
+  }
+
+  .header-actions {
+    gap: 10px;
+  }
+
+  .nav {
+    gap: 17px;
+  }
+
+  .nav > a:not(.nav-cta) {
+    font-size: 0.64rem;
+    letter-spacing: 0.9px;
+  }
+
+  .nav-cta {
+    min-width: 142px;
+    padding-inline: 16px;
+
+    font-size: 0.61rem;
+    letter-spacing: 1px;
+  }
+
+  .language-trigger {
+    min-width: 76px;
+    padding-inline: 11px;
+  }
+}
+
+/* ======================================================
+   TABLET Y MÓVIL
+====================================================== */
+
+@media (max-width: 900px) {
+  .header,
+  .header-scrolled {
+    height: var(--header-height);
+  }
+
+  .header-container {
+    gap: 18px;
+  }
+
+  .header-actions {
+    flex: 0 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 9px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* El selector permanece visible al lado de la hamburguesa */
+
+  .language-selector {
+    display: block;
+  }
+
+  .language-trigger {
+    min-width: 68px;
+    height: 42px;
+    padding: 0 10px;
+    gap: 6px;
+  }
+
+  .language-globe {
+    width: 17px;
+    height: 17px;
+  }
+
+  .language-current {
+    min-width: 18px;
+
+    font-size: 0.58rem;
+  }
+
+  .language-chevron {
+    width: 8px;
+    height: 5px;
+  }
+
+  .language-menu {
+    top: calc(100% + 10px);
+    right: 0;
+
+    width: 195px;
+  }
+
+  /* Navegación de pantalla completa */
+
+  .nav {
+    position: fixed;
+    inset: 0;
+    z-index: 1001;
+
+    min-height: 100dvh;
+    padding:
+      calc(var(--header-height) + 45px)
+      6%
+      45px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    background:
+      radial-gradient(
+        circle at 90% 8%,
+        rgba(95, 116, 138, 0.08),
+        transparent 28%
+      ),
+      #ffffff;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-15px);
+
+    transition:
+      opacity 0.35s ease,
+      visibility 0.35s ease,
+      transform 0.35s ease;
+  }
+
+  .nav-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translateY(0);
+  }
+
+  .nav > a:not(.nav-cta) {
+    width: 100%;
+    padding: 22px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #ededed;
+
+    color: #202020;
+
+    font-family: var(--font-title);
+    font-size: clamp(2rem, 8vw, 3.3rem);
+    font-weight: 600;
+    letter-spacing: -1px;
+    line-height: 1.05;
+    text-transform: none;
+    white-space: normal;
+  }
+
+  .nav > a:not(.nav-cta)::before {
+    content: '↗';
+
+    order: 2;
+    flex: 0 0 auto;
+
+    color: #5f748a;
+
+    font-family: var(--font-main);
+    font-size: 1rem;
+  }
+
+  .nav > a:not(.nav-cta)::after {
+    display: none;
+  }
+
+  .nav-cta {
+    width: 100%;
+    min-width: 0;
+
+    margin-top: 32px;
+    padding: 19px 22px;
+
+    justify-content: space-between;
+
+    border-radius: 2px;
+
+    font-size: 0.68rem;
+  }
+}
+
+/* ======================================================
+   CELULAR
+====================================================== */
+
+@media (max-width: 520px) {
+  .header-container {
+    width: min(92%, var(--container));
+    gap: 10px;
+  }
+
+  .header-actions {
+    gap: 7px;
+  }
+
+  .brand-name {
+    font-size: 0.8rem;
+    letter-spacing: 2.5px;
+  }
+
+  .brand-role {
+    margin-top: 6px;
+
+    font-size: 0.43rem;
+    letter-spacing: 1.45px;
+  }
+
+  .brand::after {
+    width: 30px;
+    margin-top: 7px;
+  }
+
+  .language-trigger {
+    min-width: 61px;
+    height: 40px;
+    padding: 0 8px;
+  }
+
+  .language-globe {
+    width: 16px;
+    height: 16px;
+  }
+
+  .language-current {
+    min-width: 17px;
+
+    font-size: 0.55rem;
+  }
+
+  /* Ocultamos el chevron para ahorrar espacio */
+
+  .language-chevron {
+    display: none;
+  }
+
+  .language-menu {
+    right: -48px;
+
+    width: min(195px, calc(100vw - 24px));
+  }
+
+  .menu-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav {
+    padding:
+      calc(var(--header-height) + 34px)
+      5%
+      38px;
+  }
+
+  .nav > a:not(.nav-cta) {
+    padding: 19px 0;
+
+    font-size: clamp(1.85rem, 9vw, 2.7rem);
+  }
+
+  .nav-cta {
+    margin-top: 27px;
+  }
+}
+
+/* ======================================================
+   CELULARES MUY PEQUEÑOS
+====================================================== */
+
+@media (max-width: 370px) {
+  .header-actions {
+    gap: 5px;
+  }
+
+  .brand-name {
+    font-size: 0.69rem;
+    letter-spacing: 1.75px;
+  }
+
+  .brand-role {
+    font-size: 0.36rem;
+    letter-spacing: 0.95px;
+  }
+
+  .brand::after {
+    width: 25px;
+  }
+
+  .language-trigger {
+    min-width: 55px;
+    height: 38px;
+    padding: 0 7px;
+  }
+
+  .language-globe {
+    width: 15px;
+    height: 15px;
+  }
+
+  .language-current {
+    min-width: 16px;
+
+    font-size: 0.52rem;
+  }
+
+  .language-menu {
+    right: -44px;
+  }
+
+  .menu-toggle {
+    width: 38px;
+    height: 38px;
+  }
+
+  .menu-toggle span {
+    width: 18px;
+  }
+
+  .nav {
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+
+  .nav > a:not(.nav-cta) {
+    font-size: 1.75rem;
+  }
+}
+
+/* ======================================================
+   AJUSTE PARA PANTALLAS EXTREMADAMENTE ESTRECHAS
+====================================================== */
+
+@media (max-width: 340px) {
+  .brand-role {
+    display: none;
+  }
+
+  .brand::after {
+    margin-top: 6px;
+  }
+
+  .language-trigger {
+    min-width: 52px;
+    padding-inline: 6px;
+  }
+
+  .language-globe {
+    width: 14px;
+    height: 14px;
+  }
+
+  .menu-toggle {
+    width: 37px;
+    height: 37px;
+  }
+}
+
+/* ======================================================
+   ACCESIBILIDAD
+====================================================== */
+
+.language-trigger:focus-visible,
+.language-menu button:focus-visible,
+.menu-toggle:focus-visible,
+.nav a:focus-visible,
+.brand:focus-visible {
+  outline: 2px solid #5f748a;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  .brand::after,
+  .nav,
+  .nav a,
+  .nav-cta,
+  .nav-cta span,
+  .menu-toggle,
+  .menu-toggle span,
+  .language-trigger,
+  .language-chevron,
+  .language-menu button {
+    transition: none;
+  }
+}
