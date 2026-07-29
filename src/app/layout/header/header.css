@@ -492,6 +492,13 @@
 }
 
 /* ======================================================
+   REDES DEL MENÚ MÓVIL
+====================================================== */
+
+.mobile-socials {
+  display: none;
+}
+/* ======================================================
    PORTÁTILES GRANDES
 ====================================================== */
 
@@ -722,6 +729,96 @@ backdrop-filter: blur(20px);
   box-shadow:
     0 12px 30px rgba(95, 116, 138, 0.14);
 }
+.mobile-socials {
+  width: 100%;
+  margin-top: 30px;
+  padding-top: 23px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  border-top: 1px solid #e8ecef;
+}
+
+.mobile-socials-label {
+  color: #7a8792;
+
+  font-family: var(--font-main);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+}
+
+.mobile-socials-divider {
+  width: 22px;
+  height: 1px;
+  background: #d8dde2;
+}
+
+.mobile-socials-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mobile-social-link {
+  width: 43px;
+  height: 43px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid #e1e5e8;
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 8px 22px rgba(35, 46, 56, 0.07);
+
+  transition:
+    transform var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.mobile-social-link svg {
+  width: 18px;
+  height: 18px;
+
+  display: block;
+
+  fill: currentColor;
+}
+
+.mobile-social-link:hover {
+  transform: translateY(-3px);
+
+  border-color: currentColor;
+
+  box-shadow:
+    0 13px 28px rgba(35, 46, 56, 0.11);
+}
+
+/* Colores oficiales */
+
+.mobile-social-linkedin {
+  color: #0a66c2;
+}
+
+.mobile-social-instagram {
+  color: #e4405f;
+}
+
+.mobile-social-facebook {
+  color: #1877f2;
+}
+
+.mobile-social-tiktok {
+  color: #111111;
+}
 }
 
 /* ======================================================
@@ -804,6 +901,21 @@ backdrop-filter: blur(20px);
   .nav-cta {
     margin-top: 23px;
   }
+
+  .mobile-socials {
+  margin-top: 25px;
+  padding-top: 20px;
+}
+
+.mobile-social-link {
+  width: 40px;
+  height: 40px;
+}
+
+.mobile-social-link svg {
+  width: 17px;
+  height: 17px;
+}
 }
 
 /* ======================================================

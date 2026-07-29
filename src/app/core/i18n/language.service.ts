@@ -40,6 +40,7 @@ export class LanguageService {
       'header.recognitions': 'Reconocimientos',
       'header.services': 'Servicios',
       'header.contact': 'Conversemos',
+      'header.followLabel': 'Sígueme',
 
       /* ==================================================
          HERO
@@ -577,6 +578,7 @@ export class LanguageService {
       'header.recognitions': 'Recognitions',
       'header.services': 'Services',
       'header.contact': "Let's talk",
+      'header.followLabel': 'Follow me',
 
       /* ==================================================
          HERO
@@ -1110,6 +1112,7 @@ export class LanguageService {
       'header.recognitions': 'Distinctions',
       'header.services': 'Services',
       'header.contact': 'Échangeons',
+      'header.followLabel': 'Suivez-moi',
 
       /* ==================================================
          HERO
